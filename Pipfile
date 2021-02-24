@@ -16,6 +16,7 @@ PyInstaller = "*"
 Sphinx = "*"
 twine = "*"
 cryptography = "*"
+pycodestyle = "*"
 
 [packages]
 pechkin = {editable = true, path = "."}
@@ -23,3 +24,4 @@ click = "*"
 boto3 = "*"
 pandas = "*"
 tqdm = "*"
+dateparser = "*"

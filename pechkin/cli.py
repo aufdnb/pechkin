@@ -7,6 +7,7 @@ import click
 from .pechkin import Space
 from datetime import datetime
 import logging
+import dateparser
 
 @click.command()
 @click.option("--start-date", help='Use the following format: %Y-%m-%d-%H-%M-%S')
@@ -14,12 +15,10 @@ import logging
 @click.option('--format', type=click.Choice(['JSON', 'CSV'], case_sensitive=False))
 @click.option("--destination")
 def main(start_date, end_date, format, destination):
-    start_date = datetime.strptime(start_date, '%Y-%m-%d-%H-%M-%S')
-    end_date = datetime.strptime(end_date, '%Y-%m-%d-%H-%M-%S')
+    start_date = dateparser.parse(start_date)
+    end_date = dateparser.parse(end_date)
 
     assert start_date < end_date, "Start date should be smaller than end date"
-
-    print(f"{start_date} {end_date}")
 
     with open("/home/router/auf_dnb/.config") as fp:
         configs = json.load(fp)
