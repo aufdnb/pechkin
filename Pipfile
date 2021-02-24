@@ -1,0 +1,25 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+bumpversion = "*"
+wheel = "*"
+watchdog = "*"
+flake8 = "*"
+tox = "*"
+coverage = "*"
+pytest = "*"
+pytest-runner = "*"
+PyInstaller = "*"
+Sphinx = "*"
+twine = "*"
+cryptography = "*"
+
+[packages]
+pechkin = {editable = true, path = "."}
+click = "*"
+boto3 = "*"
+pandas = "*"
+tqdm = "*"
